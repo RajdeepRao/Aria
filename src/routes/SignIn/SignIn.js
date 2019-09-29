@@ -18,18 +18,25 @@ class SignIn extends Component{
   }
 
   SignIn = (formState) => {
-    // console.log(formState)
-    // console.log(FirebaseApp.name)
-    // let auth = FirebaseApp.auth()
-    // auth.createUserWithEmailAndPassword(
-    //   formState.username,
-    //   formState.password
-    // ).then(function(user) {
-    //   var user = auth.currentUser;
-    //   console.log(user)
-    // }).catch(function(error) {
-    //   console.log(error)
-    // });
+    console.log(formState)
+    console.log(FirebaseApp.name)
+    let auth = FirebaseApp.auth()
+    auth.signInWithEmailAndPassword(
+      formState.username,
+      formState.password
+    ).then(function(user) {
+      var user = auth.currentUser;
+      window.location.href="/dashboard";
+    }).catch(function(error) {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      if (errorCode === 'auth/wrong-password') {
+        alert('Wrong password.');
+      } else {
+        alert(errorMessage);
+      }
+      console.log(error);
+    });
   }
 
   render() {

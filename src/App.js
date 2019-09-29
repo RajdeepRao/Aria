@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-import Login from './containers/Login'
 import SignUp from './routes/SignUp/SignUp'
 import SignIn from './routes/SignIn/SignIn'
 import FirebaseApp from './libraries/firebase'
