@@ -1,18 +1,20 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Login from './containers/Login'
+import SignUp from './routes/SignUp/SignUp'
+import SignIn from './routes/SignIn/SignIn'
+import FirebaseApp from './libraries/firebase'
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Router>
+          <Route exact path="/SignUp" component={SignUp} />
+          <Route exact path="/" component={SignIn} />
+        </Router>
       </div>
     );
   }
