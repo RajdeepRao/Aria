@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
+import TextField from '@material-ui/core/TextField';
 
-class FridgeItem extends Component {
+class Item extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -11,6 +12,7 @@ class FridgeItem extends Component {
 
   onChange = (event) => {
     this.setState({term: event.target.value});
+    console.log({term: event.target.value})
   }
 
   onSubmit = (event) => {
@@ -24,15 +26,10 @@ class FridgeItem extends Component {
   render() {
     return (
       <div>
-        <div className="header">
-          <form onSubmit={this.onSubmit}>
-            <input placeholder="Item" value={this.state.term} onChange={this.onChange}/>
-            <button type="submit"> Add Task </button>
-          </form>
-        </div>
+        <TextField/>
       </div>
     )
   }
 }
 
-export default FridgeItem;
+export default Item;
