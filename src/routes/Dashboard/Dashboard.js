@@ -6,8 +6,8 @@ import Container from '@material-ui/core/Container';
 import Grid from '@material-ui/core/Grid';
 import Link from '@material-ui/core/Link';
 import FirebaseApp from '../../libraries/firebase'
-import Item from '../../components/Item/Item'
 import Header from '../../components/Header/Header'
+import "./Dashboard.css"
 
 class Dashboard extends Component{
   constructor(props) {
@@ -21,8 +21,16 @@ class Dashboard extends Component{
       <div>
         <Header/>
         <Container component="main" maxWidth="xs">
-          <Grid container>
-            <Item/>
+          <Grid container  justify="space-evenly">
+            <TextField/>
+            <Button
+              type="submit"
+              variant="contained"
+              color="primary"
+              className="submit"
+            >
+              Add
+            </Button>
           </Grid>
         </Container>
       </div>
