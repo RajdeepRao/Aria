@@ -1,0 +1,22 @@
+.ModifyButton {
+  background-color: Transparent;
+  background-repeat:no-repeat;
+  border: none;
+  cursor:pointer;
+  overflow: hidden;
+  outline:none;
+}
+.items{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.expires{
+  width: 16%;
+}
+.margins{
+  margin: 3%;
+}
+.image{
+  margin-top: 10%;
+}
